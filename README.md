@@ -21,7 +21,7 @@ git clone https://github.com/maronuu/ThreadSafeQueue.git
 ### 2. Build
 ```
 cd ~/ThreadSafeQueue
-make all
+make
 ```
 
 ### 3. Run
