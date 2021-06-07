@@ -15,9 +15,15 @@ CFLAGS = -Wall -O2 -pthread -I $(INCDIR)
 all: $(TARGET)
 
 $(OUTDIR)/main: $(SRCDIR)/main.c $(SRCDIR)/$(LIBDIR)/safeQueue.c
+	@if [ ! -d $(OUTDIR) ];\
+		then echo "mkdir -p $(OUTDIR)"; mkdir -p $(OUTDIR); \
+		fi
 	$(CC) $(CFLAGS) $^ -lm -o $@
 
 $(OUTDIR)/queueTest: $(SRCDIR)/queueTest.c $(SRCDIR)/$(LIBDIR)/safeQueue.c
+	@if [ ! -d $(OUTDIR) ];\
+			then echo "mkdir -p $(OUTDIR)"; mkdir -p $(OUTDIR); \
+			fi
 	$(CC) $(CFLAGS) $^ -lm -o $@
 
 $(OUTDIR)/%.o:%.c
